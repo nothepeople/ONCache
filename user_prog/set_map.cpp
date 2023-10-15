@@ -50,7 +50,7 @@ int fillup_init_map(const char* pin_dir, const char* file_name) {
         if (parse_mac(mac_str, devinfo_.mac) < 0) {
             return EXIT_FAIL_OPTION;
         }
-        // Update data to sdpodip2restorekey map
+        // Update data to devmap map
         err = update_map_element(pin_dir, "devmap", &key, &devinfo_);
         if (err) {
             printf("ERR: devmap\n");

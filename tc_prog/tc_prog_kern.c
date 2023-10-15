@@ -143,7 +143,7 @@ int tc_masq_func(struct __sk_buff *ctx) {
         goto out;
     } 
 
-    // Use the local cache key to look up the egressinfo for masq
+    // Use the nodeip to look up the egressinfo for masq
     struct egressinfo* egressinfo_ = bpf_map_lookup_elem(&egress_cache, nodeip_);
     if (!egressinfo_) {
         bpf_printkm("(tc_masq)WARNING: Can not find egressinfo. nodedip is %x", &nodeip_);
